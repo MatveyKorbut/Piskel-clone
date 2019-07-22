@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Piskel clone</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+<section class="control-panel">
+  <section class="tools">
+    <div class="paint-tools">
+      <div>
+          <input class="px1" type="radio" name="pixel" id="1px" checked>
+          <input class="px2" type="radio" name="pixel" id="2px">
+          <input class="px3" type="radio" name="pixel" id="3px">
+      </div>
+      <i class="fas fa-pen"  id="pixel" title="Pixel tool"></i>
+      <i class="fas fa-pencil-ruler" id="double-pixel" title="Double pixel tool"></i>
+      <i class="fas fa-eraser" id="eraser" title="Eraser tool"></i>
+      <i class="fas fa-fill" id="full-fill" title="Full fill tool"></i>
+      <i class="fas fa-undo" id="rotate" title="Rotate left tool"></i>
+      <i class="fab fa-flipboard" id="flip" title="Flip tool"></i>
+    </div>
+    <div class="form-tools">
+        <input type="color" name="color1" id="first-color" class="color-changer">
+        <input type="color" name="color2" id="second-color" value="#ffffff" class="color-changer">
+        <i class="fas fa-ruler-combined" id="canvas-size"></i>
+        <div id="canvas-size-modal" class="modal" title="Change canvas size">
+          <div class="modal-content">
+            <button class="close" id="close-canvas-size-modal">&times;</button>
+            <button id="32x32">32x32</button>
+            <button id="64x64">64x64</button>
+            <button id="128x128">128x128</button>
+          </div>
+        </div>
+        <i class="fas fa-keyboard"  id="key-codes" title="Change keys"></i>
+        <div id="key-codes-modal" class="modal">
+            <div class="key-codes-modal-content">
+            <label for="pixel-key">pixel
+              <input type="text" value="p" id="pixel-key">
+            </label>
+            <label for="double-pixel-key">double-pixel
+                <input type="text" value="d" id="double-pixel-key">
+            </label>
+            <label for="eraser-key">eraser
+              <input type="text" value="e" id="eraser-key">
+            </label>
+            <label for="full-fill-key">full-fill
+              <input type="text" value="f" id="full-fill-key">
+            </label>
+            <label for="rotate-key">rotate
+              <input type="text" value="r" id="rotate-key">
+            </label>
+            <label for="flip-key">flip
+              <input type="text" value="l" id="flip-key">
+            </label>
+            <button class="close" id="close-key-codes-modal">&times;</button>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <ul class="canvas-list" id="canvas-list">
+      <button id="create-frame-button" class="buttons-text">new frame</button>
+        <li class ="column" draggable="true">
+          <i class="fas fa-copy copy"></i>
+          <i class="fas fa-trash-alt delete"></i>
+          <canvas id="first-small" height="256" width="256" class="small-canvas"></canvas>
+        </li>
+  </ul>
+</section>
+
+
+  <div class="canvas-block">
+	<canvas id="canvas" width="640" height="640">
+  </canvas>
+  <label for="canvas" id="canvas-label" class="buttons-text"></label>
+
+  </div>
+  <div class="animation">
+    <canvas id="animation-canvas" width="512" height="512">
+    </canvas>
+    <button id="fullscreen-button" class="buttons-text">FullScreen</button>
+    <input id = "fps" type="range" min="1" max="24" step="1" value="12">
+    <label for="fps" id="fps-label">FPS: 12</label>
+    <div id="downloads">
+   
+      <input type="radio" name="download" id="png" checked> 
+      <label for="png" class="buttons-text">png</label>
+      <input type="radio" name="download" id="jpeg">
+      <label for="jpeg"  class="buttons-text">jpeg</label>
+      <input type="radio" name="download" id="gif">
+      <label for="gif"  class="buttons-text">webm</label>
+      <a id="download" download="canvas.png"  class="buttons-text"> Download</a>
+    </div>
+ 
+  </div>
+  <div class="start-modal" id="start-modal">
+    <div class="modal-content start">
+      <p class="title close-modal">Piskel clone</p>
+      <img src="assets/img/duck2.png" alt="duck">
+      <button class="close-modal" id="close-start-modal"><span>Let's start </span></button>
+    </div>
+  </div>
+      
+<script src="script.js"></script>
+</body>
+</html>
